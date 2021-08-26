@@ -14,13 +14,13 @@ canvas {
 }
 
 .gameTitle{
-  width: 85%;
+  width: 600px;
   height: 160px;
 }
 
 .gameTitleAfterEffect{
-  width: 25%;
-  height: 80px;
+  width: 15%;
+  height: 50px;
 }
 
 .greeting{

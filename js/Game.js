@@ -34,13 +34,13 @@ class Game {
 
     car1 = createSprite(width / 2 - 50, height - 100);
     car1.addImage("car1", car1_img);
-    car1.scale = 0.07;
+    car1.scale = 0.05;
 
     car1.addImage("blast", blastImage); //C42 //SA
 
     car2 = createSprite(width / 2 + 100, height - 100);
     car2.addImage("car2", car2_img);
-    car2.scale = 0.07;
+    car2.scale = 0.05;
 
     car2.addImage("blast", blastImage); //C42//SA
 
@@ -58,18 +58,18 @@ class Game {
 
     //C41 //BP //SA
     var obstaclesPositions = [
-      { x: width / 2 + 250, y: height - 800, image: obstacle2Image },
+      { x: width / 2 + 150, y: height - 800, image: obstacle2Image },
       { x: width / 2 - 150, y: height - 1300, image: obstacle1Image },
-      { x: width / 2 + 250, y: height - 1800, image: obstacle1Image },
-      { x: width / 2 - 180, y: height - 2300, image: obstacle2Image },
+      { x: width / 2 + 150, y: height - 1800, image: obstacle1Image },
+      { x: width / 2 - 160, y: height - 2300, image: obstacle2Image },
       { x: width / 2, y: height - 2800, image: obstacle2Image },
-      { x: width / 2 - 180, y: height - 3300, image: obstacle1Image },
-      { x: width / 2 + 180, y: height - 3300, image: obstacle2Image },
-      { x: width / 2 + 250, y: height - 3800, image: obstacle2Image },
+      { x: width / 2 - 170, y: height - 3300, image: obstacle1Image },
+      { x: width / 2 + 170, y: height - 3300, image: obstacle2Image },
+      { x: width / 2 + 150, y: height - 3800, image: obstacle2Image },
       { x: width / 2 - 150, y: height - 4300, image: obstacle1Image },
-      { x: width / 2 + 250, y: height - 4800, image: obstacle2Image },
+      { x: width / 2 + 150, y: height - 4800, image: obstacle2Image },
       { x: width / 2, y: height - 5300, image: obstacle1Image },
-      { x: width / 2 - 180, y: height - 5500, image: obstacle2Image }
+      { x: width / 2 - 160, y: height - 5500, image: obstacle2Image }
     ];
 
     //Adding obstacles sprite in the game
@@ -77,7 +77,7 @@ class Game {
       obstacles,
       obstaclesPositions.length,
       obstacle1Image,
-      0.04,
+      0.03,
       obstaclesPositions
     );
   }
@@ -111,20 +111,20 @@ class Game {
 
     this.resetTitle.html("Reset Game");
     this.resetTitle.class("resetText");
-    this.resetTitle.position(width / 2 + 200, 40);
+    this.resetTitle.position(width / 2 + 200, 100);
 
     this.resetButton.class("resetButton");
-    this.resetButton.position(width / 2 + 230, 100);
+    this.resetButton.position(width / 2 + 230, 160);
 
     this.leadeboardTitle.html("Leaderboard");
     this.leadeboardTitle.class("resetText");
-    this.leadeboardTitle.position(width / 3 - 60, 40);
+    this.leadeboardTitle.position(width / 3 - 60, 100);
 
     this.leader1.class("leadersText");
-    this.leader1.position(width / 3 - 50, 80);
+    this.leader1.position(width / 3 - 50, 140);
 
     this.leader2.class("leadersText");
-    this.leader2.position(width / 3 - 50, 130);
+    this.leader2.position(width / 3 - 50, 190);
   }
 
   play() {
@@ -165,7 +165,7 @@ class Game {
         if (index === player.index) {
           stroke(10);
           fill("red");
-          ellipse(x, y, 60, 60);
+          ellipse(x, y, 40, 40);
 
           this.handleFuel(index);
           this.handlePowerCoins(index);
@@ -250,22 +250,22 @@ class Game {
 
   showFuelBar() {
     push();
-    image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
+    image(fuelImage, width / 2 - 130, height - player.positionY - 300, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
+    rect(width / 2 - 100, height - player.positionY - 300, 185, 20);
     fill("#ffc400");
-    rect(width / 2 - 100, height - player.positionY - 350, player.fuel, 20);
+    rect(width / 2 - 100, height - player.positionY - 300, player.fuel, 20);
     noStroke();
     pop();
   }
 
   showLife() {
     push();
-    image(lifeImage, width / 2 - 130, height - player.positionY - 400, 20, 20);
+    image(lifeImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 400, 185, 20);
+    rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
     fill("#f50057");
-    rect(width / 2 - 100, height - player.positionY - 400, player.life, 20);
+    rect(width / 2 - 100, height - player.positionY - 350, player.life, 20);
     noStroke();
     pop();
   }
