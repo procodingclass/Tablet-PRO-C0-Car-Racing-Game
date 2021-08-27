@@ -43,7 +43,3 @@ function draw() {
     game.end();
   }
 }
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
